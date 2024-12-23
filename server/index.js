@@ -8,8 +8,16 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({ origin: 'http://localhost:5173' })); 
-app.use(express.json()); 
+
+const corsOptions = {
+  origin: process.env.NODE_ENV === 'production'
+    ? 'https://blog-app-ai-hb4p.vercel.app/'  // Replace with your actual frontend URL
+    : 'http://localhost:5173', // For local development
+};
+
+app.use(cors(corsOptions));
+app.use(express.json());
+
 
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
