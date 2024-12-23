@@ -8,7 +8,7 @@ export default function Create() {
   const navigate = useNavigate();
 
   // Determine the correct API URL based on the environment
-  const apiUrl = process.env.NODE_ENV === 'production'
+  const apiUrl = process.env.VITE_API_BASE_URL === 'production'
     ? 'https://blog-app-ai-hb4p.vercel.app/' // Replace with your actual deployed backend URL
     : 'http://localhost:5000'; // Local development URL
 
