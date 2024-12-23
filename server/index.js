@@ -11,7 +11,7 @@ const app = express();
 
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production'
-    ? 'https://blog-app-ai-hb4p.vercel.app/'  // Replace with your actual frontend URL
+    ? 'https://blog-app-eftgk15h4-agnt17s-projects.vercel.app/'  // Replace with your actual frontend URL
     : 'http://localhost:5173', // For local development
 };
 
@@ -29,7 +29,7 @@ mongoose.connect(process.env.MONGO_URI, {
 const postSchema = new mongoose.Schema({
     title: { type: String, required: true },
     content: { type: String, required: true },
-    summary_text: { type: String, required: true }, 
+    summary_text: { type: String, required: true },  // for text summarization
 });
 
 const Post = mongoose.model('Post', postSchema);
@@ -48,7 +48,7 @@ app.post('/create-post', async (req, res) => {
         const aiResponse = await hf.summarization({
             model: 'facebook/bart-large-cnn',
             inputs: content,
-        });
+        }); // hugging face api
 
         console.log('Hugging Face API Response:', aiResponse);
 
