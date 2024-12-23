@@ -10,9 +10,9 @@ const app = express();
 
 
 const corsOptions = {
-  origin: process.env.NODE_ENV === 'production'
-    ? 'https://blog-app-eftgk15h4-agnt17s-projects.vercel.app/'  // Replace with your actual frontend URL
-    : 'http://localhost:5173', // For local development
+  origin: ["http://localhost:5173"],
+  methods: ["GET", "POST"],
+  credentials: true, // allow cookies from other domains
 };
 
 app.use(cors(corsOptions));
