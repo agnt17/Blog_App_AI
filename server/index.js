@@ -10,7 +10,7 @@ const app = express();
 
 
 const corsOptions = {
-  origin: ["https://blog-app-ai-ch1m-prjzp4xgw-agnt17s-projects.vercel.app/"],
+  origin: ["https://blog-app-ai-ch1m-prjzp4xgw-agnt17s-projects.vercel.app"],
   methods: ["GET", "POST"],
   credentials: true, // allow cookies from other domains
 };
