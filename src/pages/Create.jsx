@@ -10,7 +10,7 @@ export default function Create() {
   // Determine the correct API URL based on the environment --->
   // There is some sort of network error, I really tried hard but can't figured out, however this project runs completely fine in local environment. 
   const apiUrl = process.env.NODE_ENV  === 'production'
-    ? 'https://blog-app-ai-hb4p.vercel.app/' // Replace with your actual deployed backend URL
+    ? 'https://blog-app-ai-foku.vercel.app/' // Replace with your actual deployed backend URL
     : 'http://localhost:5000'; // Local development URL
 
   const handleHome = () => {
